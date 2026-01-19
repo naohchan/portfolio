@@ -1,0 +1,47 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "October 2025",
+    title: "Full-Stack Developer – Facturito",
+    description:
+      "Design and development of Facturito, a web-based electronic invoicing system focused on small and medium businesses. The platform supports client management, invoice generation, tax logic, and a scalable architecture built with modern frontend and backend practices",
+    link: "https://mifacturito.com",
+  },
+  {
+    date: "March 2025",
+    title: "Full-Stack Developer – Seed2Growth",
+    description:
+      "Built an MVP platform for researchers and PhD students that enables AI-assisted transformation of scientific results into audience-specific content for policymakers, industry, academia, and media. Implemented backend services with FastAPI, integrated OpenAI APIs for content generation, and designed a modular frontend supporting future real-time and messaging integrations",
+  },
+  {
+    date: "August 2023",
+    title: "Business Intelligence Analyst – SOLGAS",
+    description:
+      "Developed and maintained end-to-end analytics solutions for a large-scale LPG provider, including data modeling, automation of repetitive reporting processes with Python, and advanced analytics using machine learning for sales forecasting, seasonality, profitability, and customer behavior prediction. Built and maintained Qlik Sense dashboards for commercial and financial stakeholders, managed large B2B client portfolios, and produced executive reports to support data-driven decision-making across commercial leadership.",
+  },
+
+  {
+    date: "April 2023",
+    title: "Data Analyst – LIQUID Venture Studio",
+    description:
+      "Designed and implemented analytics solutions for multiple enterprise clients using Google Analytics, BigQuery, and Looker Studio. Built data pipelines leveraging Google Cloud services and Python for data extraction, transformation, and analysis. Performed exploratory data analysis and applied time series machine learning models to forecast sales by brand and distributor, supporting data-driven decision-making for commercial and managerial stakeholders.",
+  },
+  {
+    date: "2022 – 2023",
+    title: "Data Analyst & Key User – Grupo Alfa",
+    description:
+      "Developed data-driven solutions within an ERP environment using SQL, Python, Excel, and Power BI to support commercial and operational decision-making. Automated reporting workflows, contributed to ERP pilot testing and rollout, and performed inventory and replenishment analysis based on historical sales data, defining safety stock levels for more than 1,600 SKUs across multiple production plants.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

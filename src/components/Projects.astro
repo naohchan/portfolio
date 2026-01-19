@@ -1,0 +1,100 @@
+---
+import AstroIcon from "../icons/AstroIcon.astro";
+import TailwindIcon from "../icons/TailwindIcon.astro";
+import BootstrapIcon from "../icons/BootstrapIcon.astro";
+import JQueryIcon from "../icons/JQueryIcon.astro";
+import PHPIcon from "../icons/PHPIcon.astro";
+import JSIcon from "../icons/JSIcon.astro";
+import HTMLIcon from "../icons/HTMLIcon.astro";
+import CSSIcon from "../icons/CSSIcon.astro";
+
+const TAGS = {
+  ASTRO: {
+    name: "Astro",
+    class: "bg-blue-600/20 text-blue-400",
+    icon: AstroIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-white text-[#003159]",
+    icon: TailwindIcon,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-blue-600/20 text-blue-400",
+    icon: BootstrapIcon,
+  },
+  JQUERY: {
+    name: "jQuery",
+    class: "bg-blue-600/20 text-blue-400",
+    icon: JQueryIcon,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-blue-600/20 text-blue-400",
+    icon: PHPIcon,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-blue-600/20 text-blue-400",
+    icon: JSIcon,
+  },
+  HTML: {
+    name: "HTML5",
+    class: "bg-blue-600/20 text-blue-400",
+    icon: HTMLIcon,
+  },
+  CSS: {
+    name: "CSS3",
+    class: "bg-blue-600/20 text-blue-400",
+    icon: CSSIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Crazy Bubbles Game",
+    description:
+      "Crazy Bubble is a casual puzzle game centered around merging colourful bubbles to create progressively larger ones within a limited playing field. Players earn points and coins by merging bubbles of the same colour and size, while increasing board congestion naturally raises the difficulty and challenges spatial awareness and timing. Inspired by Merge Fruit, the game introduces unique mechanics such as an in-game shop with gameplay-altering tools, a competitive two-player mode, and random in-game incidents that disrupt or modify gameplay. These elements combine to create a balanced experience that blends strategy, competition, and relaxation, making Crazy Bubble an engaging game suitable for short, satisfying play sessions.",
+    link: "https://uob-comsm0166.github.io/2025-group-2/",
+    github: "",
+    image: "/projects/svlg.webp",
+    tags: [TAGS.JS, TAGS.HTML, TAGS.CSS],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, link, tags, image }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center mb-4 text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+      >
+        Saber mas
+      </a>
+
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex items-center gap-x-2 rounded-full text-xs leading-none ${tag.class} py-2 px-2`}
+            >
+              <tag.icon class="size-6" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${image}}`}
+      />
+    </article>
+  ))
+}
